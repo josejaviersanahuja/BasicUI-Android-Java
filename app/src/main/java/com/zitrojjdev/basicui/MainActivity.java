@@ -1,8 +1,12 @@
 package com.zitrojjdev.basicui;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -11,6 +15,7 @@ import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -50,7 +55,36 @@ public class MainActivity extends AppCompatActivity {
         thread.start();
     }
 
-     public void handleClick (View view){
+    // override 1. here we will inflate the menu items for this activity.
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_manu, menu);
+        return true;
+    }
+
+    // override 2 we will receive the MenuItem when we click and act accordingly
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch(item.getItemId()) {
+            case R.id.UI1:
+                Toast.makeText(this, "UI 1 selected", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.UI2:
+                Toast.makeText(this, "UI 2 selected", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.UI3:
+                Toast.makeText(this, "UI 3 selected", Toast.LENGTH_SHORT).show();
+                return true;
+            case R.id.UI4:
+                Toast.makeText(this, "UI 4 selected", Toast.LENGTH_SHORT).show();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    public void handleClick (View view){
         outputText = findViewById(R.id.outputText);
         nameCheckBox = findViewById(R.id.nameCheckBox);
         int checkedRadioBtnId = radioGroup.getCheckedRadioButtonId();

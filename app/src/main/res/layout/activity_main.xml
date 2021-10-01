@@ -78,13 +78,14 @@
     </RadioGroup>
 
     <ProgressBar
+        android:id="@+id/progressBar"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/outputText"
-        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
         android:layout_marginTop="20dp"
-        android:progress="0"
         android:max="100"
-        android:id="@+id/progressBar"/>
+        android:progress="0"
+        android:progressTint="@color/purple_700" />
 
 </RelativeLayout>
