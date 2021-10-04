@@ -3,6 +3,7 @@ package com.zitrojjdev.basicui;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -68,15 +69,30 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch(item.getItemId()) {
             case R.id.UI1:
+                Intent intentUI1 = new Intent(this, MainActivity.class);
+                if (!this.equals(MainActivity.this)){
+                    System.out.println("ENTROOOOOOOOOOOOOOOOOOOOOOO");
+                    startActivity(intentUI1);
+                }
+
                 Toast.makeText(this, "UI 1 selected", Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.UI2:
+                Intent intentUI2 = new Intent(this, UI2Activity.class);
+                startActivity(intentUI2);
+
                 Toast.makeText(this, "UI 2 selected", Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.UI3:
+                Intent intentUI3 = new Intent(this, UI2Activity.class);
+                startActivity(intentUI3);
+
                 Toast.makeText(this, "UI 3 selected", Toast.LENGTH_SHORT).show();
                 return true;
             case R.id.UI4:
+                Intent intentUI4 = new Intent(this, UI2Activity.class);
+                startActivity(intentUI4);
+
                 Toast.makeText(this, "UI 4 selected", Toast.LENGTH_SHORT).show();
                 return true;
             default:
